@@ -10,10 +10,11 @@
 <body>
     <h1>Working with multi-level nested HTML lists</h1>
     <h2>Grocery list for:</h2>
+
     <ul>
         <li><b><u>Fruits</u></b></li>
         <li><b><u>Vegetables</u></b></li>
-        <li><b><u>Fruits</u></b></li>
+        <li><b><u>Meat</u></b></li>
     </ul>
     <ul>
         <!-- FRUITS -->
@@ -21,9 +22,38 @@
             <ul>
                 <li>Apples
                     <ol>
-                        <li>Red Apples</li>
-                        <li>Green Apples</li>
-                        <li>Yellow Apples</li>
+                        <li>Red Apples
+                            <ul>
+                                <li>Sweet Types
+                                    <ol>
+                                        <li>Fuji</li>
+                                        <li>Honeycrisp</li>
+                                    </ol>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>Green Apples
+                            <ul>
+                                <li>Sour Types
+                                    <ol>
+                                        <li>Granny Smith</li>
+                                        <li>Pippin</li>
+                                    </ol>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>Yellow Apples
+                            <ul>
+                                <li>Aromatic Types
+                                    <ol>
+                                        <li>Golden Delicious</li>
+                                        <li>Opal</li>
+                                    </ol>
+                                </li>
+                            </ul>
+                        </li>
                     </ol>
                 </li>
 
