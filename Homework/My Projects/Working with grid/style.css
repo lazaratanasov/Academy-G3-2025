@@ -1,0 +1,78 @@
+* {
+  box-sizing: border-box;
+   border-radius: 25px; 
+   /* rounded corners look better for me that's why i did it like that, i know the original doesn't have them */
+}
+
+body {
+  margin: 0;
+  background: #ffffff;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.grid {
+  padding: 12px;
+  display: grid;
+  gap: 24px;
+
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: 1fr 1fr;
+
+  height: 275px;
+}
+
+.card {
+  padding: 14px;
+  font-size: 14px;
+  line-height: 1.25;
+}
+
+.card--purple {
+  background: rgb(138, 43, 226);
+  color: #000;
+}
+
+.card--grey {
+  background: rgb(169, 169, 169);
+  color: #000;
+}
+
+.card--lavender {
+  background: rgb(203, 158, 237);
+  color: #000;
+}
+
+.card--light {
+  background: rgb(232, 224, 239);
+  color: #000;
+}
+
+.card--dark {
+  background: rgb(43, 35, 49);
+  color: #fff;
+}
+
+.wide {
+  grid-column: 1 / span 4;
+  grid-row: 1;
+}
+
+.top-mid {
+  grid-column: 5 / span 2;
+  grid-row: 1;
+}
+
+.tall-right {
+  grid-column: 7 / span 2;
+  grid-row: 1 / span 2;
+}
+
+.bottom-left {
+  grid-column: 1 / span 2;
+  grid-row: 2;
+}
+
+.bottom-mid {
+  grid-column: 3 / span 4;
+  grid-row: 2;
+}
