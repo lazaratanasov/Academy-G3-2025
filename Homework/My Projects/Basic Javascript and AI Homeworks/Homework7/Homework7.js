@@ -1,6 +1,6 @@
 function createTable() {
-  let rows = Number(prompt("Enter number of rows:"));
-  let cols = Number(prompt("Enter number of columns:"));
+  let rows = Number(document.getElementById("rowsInput").value);
+  let cols = Number(document.getElementById("colsInput").value);
 
   if (isNaN(rows) || isNaN(cols) || rows <= 0 || cols <= 0) {
     alert("Please enter valid numbers for rows and columns.");
@@ -30,4 +30,5 @@ function createTable() {
   document.body.appendChild(table);
 }
 
-createTable();
+// Event Listener
+document.getElementById("createBtn").addEventListener("click", createTable);
