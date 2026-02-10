@@ -10,5 +10,15 @@ $("#loadPokemon").click(function () {
         $("#pokemonList").append("<li>" + data.results[i].name + "</li>");
       }
     },
+
+    error: function (xhr, status, error) {
+      console.log("Error occurred:");
+      console.log("Status:", status);
+      console.log("Error:", error);
+
+      $("#pokemonList").append(
+        "<li style='color:red;'>Failed to load Pokemon.</li>",
+      );
+    },
   });
 });
