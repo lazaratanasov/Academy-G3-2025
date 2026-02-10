@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SWAPI Planets Pagination</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            max-width: 900px;
+        }
+
+        th,
+        td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background: #f5f5f5;
+        }
+
+        button {
+            margin: 10px 8px 0 0;
+            padding: 8px 12px;
+            cursor: pointer;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .wrap {
+            max-width: 900px;
+        }
+
+        .status {
+            margin-top: 8px;
+            color: #444;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <h2>Star Wars Planets</h2>
+
+        <button id="btnLoad">Load First 10 Planets</button>
+
+        <table id="planetsTable">
+            <thead>
+                <tr>
+                    <th>Planet Name</th>
+                    <th>Population</th>
+                    <th>Climate</th>
+                    <th>Gravity</th>
+                </tr>
+            </thead>
+            <tbody id="planetsTbody">
+            </tbody>
+        </table>
+
+        <div class="status" id="status"></div>
+
+        <button id="btnNext" class="hidden">NEXT 10</button>
+        <button id="btnPrev" class="hidden">PREVIOUS 10</button>
+    </div>
+
+    <script src="Homework.js"></script>
+</body>
+
+</html>
