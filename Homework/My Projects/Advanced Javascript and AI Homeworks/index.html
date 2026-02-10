@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Reminder App</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+</head>
+
+<body>
+    <main class="container">
+        <h1>Reminder App</h1>
+
+        <section class="card">
+            <div class="grid">
+                <label>
+                    Title
+                    <input id="titleInput" type="text" placeholder="e.g., Buy Groceries" />
+                </label>
+
+                <label>
+                    Priority
+                    <select id="priorityInput">
+                        <option value="Low">Low</option>
+                        <option value="Medium" selected>Medium</option>
+                        <option value="High">High</option>
+                    </select>
+                </label>
+
+                <label>
+                    Color
+                    <input id="colorInput" type="color" value="#1e90ff" />
+                </label>
+            </div>
+
+            <label class="full">
+                <textarea id="descriptionInput" rows="3" placeholder="Add details..."></textarea>
+            </label>
+
+            <div class="actions">
+                <button id="addBtn">Add Reminder</button>
+                <button id="showBtn" class="secondary">Show Reminders</button>
+            </div>
+
+            <p id="status" class="status"></p>
+        </section>
+
+        <section class="card">
+            <h2>Reminders</h2>
+            <div class="table-wrap">
+                <table id="remindersTable">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Title</th>
+                            <th>Priority</th>
+                            <th>Description</th>
+                            <th>Color</th>
+                            <th>Created</th>
+                        </tr>
+                    </thead>
+                    <tbody id="remindersTbody">
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+</body>
+
+</html>
