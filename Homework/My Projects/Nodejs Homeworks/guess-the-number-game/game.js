@@ -4,6 +4,10 @@ import { fileURLToPath } from "node:url";
 import { v4 as uuidv4 } from "uuid";
 import { EventEmitter } from "node:events";
 
+class Game extends EventEmitter {}
+
+export const gameEmitter = new Game();
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -22,6 +26,10 @@ export async function playGame(difficulty, rl) {
 
     if (!isWholeNumber || !isInRange) {
       console.log(`Enter a whole number between 1 and ${maxNumber}.`);
+      gameEmitter.emit("invalidGuess", {
+        difficultyId: difficulty,
+        rawInput: trimmedInput,
+      });
       continue;
     }
 
@@ -29,10 +37,28 @@ export async function playGame(difficulty, rl) {
 
     if (guessNumber > secretNumber) {
       console.log("too high");
+
+      gameEmitter.emit("guess", {
+        difficultyId: difficulty,
+        guessValue: guessNumber,
+        outcome: "high",
+      });
     } else if (guessNumber < secretNumber) {
       console.log("too low");
+
+      gameEmitter.emit("guess", {
+        difficultyId: difficulty,
+        guessValue: guessNumber,
+        outcome: "low",
+      });
     } else {
       console.log(`correct — ${attempts} guesses.`);
+      gameEmitter.emit("guess", {
+        difficultyId: difficulty,
+        guessValue: guessNumber,
+        outcome: "win",
+      });
+
       const sessionId = uuidv4();
       const completedAt = new Date().toISOString();
       saveSession(sessionId, difficulty, attempts, completedAt);
@@ -75,8 +101,4 @@ function updateBest(difficulty, attempts, sessionId, completedAt) {
 
     fs.writeFileSync(bestsPath, JSON.stringify(bests, null, 2));
   }
-}
-
-class Game extends EventEmitter { 
-  
 }

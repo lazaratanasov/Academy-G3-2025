@@ -3,14 +3,25 @@ import { fileURLToPath } from "node:url";
 import readline from "node:readline/promises";
 import { stdin, stdout } from "node:process";
 import fs from "node:fs";
-import { playGame } from "./game.js";
+import { playGame, gameEmitter } from "./game.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+const logPath = path.join(__dirname, "data", "game-log.txt");
 
 const rl = readline.createInterface({
   input: stdin,
   output: stdout,
+});
+
+gameEmitter.on("guess", ({ difficultyId, guessValue, outcome }) => {
+  const line = `${new Date().toISOString()} ${difficultyId} guess=${guessValue} outcome=${outcome}\n`;
+  fs.appendFileSync(logPath, line);
+});
+
+gameEmitter.on("invalidGuess", ({ difficultyId, rawInput }) => {
+  const line = `${new Date().toISOString()} ${difficultyId} invalid input="${rawInput}"\n`;
+  fs.appendFileSync(logPath, line);
 });
 
 async function showMenu() {
