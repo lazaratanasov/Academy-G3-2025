@@ -10,5 +10,17 @@
     "difficultyId": "hard",
     "guessCount": 11,
     "completedAt": "2026-03-23T13:15:18.347Z"
+  },
+  {
+    "id": "8b5407eb-c240-4ee5-bbef-2f0946ae306c",
+    "difficultyId": "easy",
+    "guessCount": 2,
+    "completedAt": "2026-03-23T13:23:57.804Z"
+  },
+  {
+    "id": "08f00e0a-52e2-4f27-bc0d-01714ed589ce",
+    "difficultyId": "hard",
+    "guessCount": 6,
+    "completedAt": "2026-03-23T13:24:13.785Z"
   }
 ]

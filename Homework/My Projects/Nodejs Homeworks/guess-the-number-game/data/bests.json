@@ -1,12 +1,12 @@
 {
   "easy": {
-    "guessCount": 8,
-    "sessionId": "2af7b2c5-f591-49dd-906d-bc8b01d0ae2a",
-    "setAt": "2026-03-23T13:12:55.871Z"
+    "guessCount": 2,
+    "sessionId": "8b5407eb-c240-4ee5-bbef-2f0946ae306c",
+    "setAt": "2026-03-23T13:23:57.804Z"
   },
   "hard": {
-    "guessCount": 11,
-    "sessionId": "7456db04-4e8c-40e3-b6c1-1a1fcffa07b3",
-    "setAt": "2026-03-23T13:15:18.347Z"
+    "guessCount": 6,
+    "sessionId": "08f00e0a-52e2-4f27-bc0d-01714ed589ce",
+    "setAt": "2026-03-23T13:24:13.785Z"
   }
 }

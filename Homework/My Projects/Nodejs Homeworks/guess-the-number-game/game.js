@@ -2,6 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { v4 as uuidv4 } from "uuid";
+import { EventEmitter } from "node:events";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -74,4 +75,8 @@ function updateBest(difficulty, attempts, sessionId, completedAt) {
 
     fs.writeFileSync(bestsPath, JSON.stringify(bests, null, 2));
   }
+}
+
+class Game extends EventEmitter { 
+  
 }
