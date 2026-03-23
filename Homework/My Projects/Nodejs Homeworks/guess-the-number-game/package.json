@@ -1,0 +1,22 @@
+{
+  "devDependencies": {
+    "prettier": "3.8.1",
+    "nodemon": "^2.0.22"
+  },
+  "name": "guess-the-number-game",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js --ignore data/*.json --ignore data/game-log.txt"
+  },
+  "keywords": [],
+  "author": "",
+  "type": "module",
+  "license": "ISC",
+  "dependencies": {
+    "uuid": "^13.0.0"
+  }
+}
